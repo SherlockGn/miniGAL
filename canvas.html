@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-8 column">
+			<div class="progress progress-striped active">
+				<div id="bar" class="progress-bar progress-success">
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 column">
+		</div>
+	</div>
+</div>
+
+<body>
+</html>
+
+<script src="minigal.js"></script>
+<script>
+
+miniGAL.setMainCanvas($("body"));
+console.log(miniGAL);
+
+miniGAL.preLoad([
+    {key: "bg", src: "bg.jpg"}, 
+    {key: "bg2", src: "bg2.png"},
+    {key: "bgm", src: "Kalimba.mp3"},
+    {key: "bgm2", src: "Maid with the Flaxen Hair.mp3"}
+], $("#bar"), gamestart);
+
+function gamestart() {
+
+    
+
+//    miniGAL.playMusic("bgm");
+    miniGAL.background("bg");
+    miniGAL.addDefaultDialog({color: "#87CEEB"});
+    miniGAL.waitclick();
+//    miniGAL.playMusic("bgm2");
+    miniGAL.background("bg2");
+    miniGAL.waitclick();
+    miniGAL.dialogShow();
+    miniGAL.waitclick();
+    miniGAL.dialogHide();
+    miniGAL.addDefaultDialog({opacity: 1});
+    miniGAL.waitclick();
+    miniGAL.dialogShow();
+    miniGAL.text("Tianhe", "Hello everyone! are you OK?");
+    miniGAL.start();
+}
+
+</script>
